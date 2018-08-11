@@ -1,0 +1,14 @@
+{
+    "name": "Sentient.Core.Editor",
+    "references": [
+        "Sentient.Core"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
