@@ -18,3 +18,4 @@ MonoBehaviour:
   BuildingPrefab: {fileID: 1433497924617186, guid: 9c063f00fcdd0964191bd3699e42e89f,
     type: 2}
   IncomeGenerated: 13
+  ChanceToChoose: 0.5
