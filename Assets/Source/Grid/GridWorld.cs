@@ -17,7 +17,7 @@ namespace Source.Grid
         private List< GridObject > BuiltObjects = new List< GridObject >( );
 
         [ Inject ]
-        public BuildingFactory factory;
+        public BuildingFactory factory { get; set; }
 
 
 
