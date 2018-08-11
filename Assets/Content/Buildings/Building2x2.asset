@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48acb8fdb8949db47ab821a858862e1e, type: 3}
+  m_Name: Building2x2
+  m_EditorClassIdentifier: 
+  Positions:
+  - pos: {x: 0, y: 0, z: 0}
+  - pos: {x: 1, y: 0, z: 0}
+  - pos: {x: 0, y: 0, z: 1}
+  - pos: {x: 1, y: 0, z: 1}
+  BuildingPrefab: {fileID: 1707652920069636, guid: 3517c0a78f2bfe149ac53c4a7410f180,
+    type: 2}

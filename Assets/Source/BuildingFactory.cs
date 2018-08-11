@@ -14,15 +14,18 @@ namespace Source
     {
 
         public GameObject colliderBlock;
+        public BuildingBlueprintSingle blueprint;
+
+
         [ Inject ]
         private GridWorld world;
         [ Inject ]
         private DiContainer container;
 
 
-        public void Buildit( )
+        public void Buildit( GridPos buildLoc )
         {
-
+            CreateBuildingAtLocationSingle( buildLoc, blueprint );
         }
 
         public void CreateBuildingAtLocationSingle( GridPos buildLoc, BuildingBlueprintSingle buildingBlueprint )

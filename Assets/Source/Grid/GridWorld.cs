@@ -13,6 +13,7 @@ namespace Source.Grid
 
     public class GridWorld : MonoBehaviour
     {
+
         private List< GridObject > BuiltObjects = new List< GridObject >( );
 
         [ Inject ]
@@ -37,9 +38,9 @@ namespace Source.Grid
         }
 
 
-        bool BuildObjectAtLocation(GridObject buildPos )
+        public bool BuildObjectAtLocation( GridPos buildPos )
         {
-            factory.Buildit();
+            factory.Buildit( buildPos );
             return true;
         }
 

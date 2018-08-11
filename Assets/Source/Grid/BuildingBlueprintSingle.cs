@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Source.Grid
 {
 
-    [ Serializable, CreateAssetMenu( fileName = "Building Blueprint", menuName = "Slumlord/Building Blueprint Single" ) ]
+    [ CreateAssetMenu( fileName = "Building Blueprint", menuName = "Slumlord/Building Blueprint Single" ) ]
     public class BuildingBlueprintSingle : ScriptableObject
     {
 

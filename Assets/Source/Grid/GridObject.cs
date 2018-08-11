@@ -9,11 +9,11 @@ using UnityEngine;
 
 namespace Source.Grid
 {
-
+    [Serializable]
     public struct GridPos
     {
 
-        public readonly Vector3Int pos;
+        public Vector3Int pos;
 
         public GridPos( int inx, int iny, int inz )
         {
@@ -89,7 +89,7 @@ namespace Source.Grid
         [ UsedImplicitly ]
         private void Awake( )
         {
-            MovedToNewPosition += SetPositionToGrid;
+            //MovedToNewPosition += SetPositionToGrid;
         }
 
         public void SetPositionToGrid( GridPos gridPos1 )
