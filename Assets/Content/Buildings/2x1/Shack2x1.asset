@@ -9,13 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48acb8fdb8949db47ab821a858862e1e, type: 3}
-  m_Name: Building2x2
+  m_Name: Shack2x1
   m_EditorClassIdentifier: 
   Positions:
   - pos: {x: 0, y: 0, z: 0}
-  - pos: {x: 1, y: 0, z: 0}
-  - pos: {x: 0, y: 0, z: 1}
-  - pos: {x: 1, y: 0, z: 1}
-  BuildingPrefab: {fileID: 1707652920069636, guid: 3517c0a78f2bfe149ac53c4a7410f180,
+  - pos: {x: -1, y: 0, z: 0}
+  BuildingPrefab: {fileID: 1100381826568590, guid: f506c296e9e129e47b01a4a20fd29c41,
     type: 2}
-  IncomeGenerated: 17
+  IncomeGenerated: 9

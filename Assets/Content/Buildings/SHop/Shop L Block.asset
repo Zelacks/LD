@@ -17,4 +17,4 @@ MonoBehaviour:
   - pos: {x: 0, y: 0, z: -1}
   BuildingPrefab: {fileID: 1433497924617186, guid: 26e7670b81ebb1f41a5302d98930093e,
     type: 2}
-  IncomeGenerated: 10
+  IncomeGenerated: 13
