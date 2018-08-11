@@ -1381,6 +1381,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1244858541}
+  Ghostmat: {fileID: 2100000, guid: a321fc65b4e28494688de517096fa7d1, type: 2}
+  ErrorColor: {r: 1, g: 0, b: 0, a: 0.29411766}
 --- !u!1 &957913910 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1343452560050526, guid: 4821cecba79aec9449534fc70eb4bb5c,

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 using ISSoW_Base_Game.Scripts.Helpers;
@@ -20,6 +21,7 @@ public class GameStateManager : MonoBehaviour
     public ObservableValue< int > Income = new ObservableValue< int >( 0 );
     public ObservableValue< int > TurnsTaken = new ObservableValue< int >( 0 );
 
+    public event Action< BuildingBlueprintSingle > NewBlueprint;
     public BuildingBlueprintSingle CurrentBlueprint;
 
     /// <summary>
@@ -45,13 +47,8 @@ public class GameStateManager : MonoBehaviour
             values.Add( ProportionValue.Create( Candidates[ i ].ChanceToChoose, Candidates[ i ] ) );
         }
 
-
-
         CurrentBlueprint = values.ChooseByRandom( );
-
-
-
-
+        NewBlueprint?.Invoke( CurrentBlueprint );
     }
 
 
