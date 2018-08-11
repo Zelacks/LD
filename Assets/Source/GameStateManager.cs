@@ -6,6 +6,7 @@ using ISSoW_Base_Game.Scripts.Helpers;
 using JetBrains.Annotations;
 
 using Source.Grid;
+using Source.Helpers;
 
 using UnityEngine;
 
@@ -38,7 +39,19 @@ public class GameStateManager : MonoBehaviour
 
     void ChooseBlueprint( )
     {
-        CurrentBlueprint = Candidates[ Random.Range( 0, Candidates.Count ) ];
+        List< ProportionValue< BuildingBlueprintSingle > > values = new List< ProportionValue< BuildingBlueprintSingle > >( );
+        for ( int i = 0; i < Candidates.Count; i++ )
+        {
+            values.Add( ProportionValue.Create( Candidates[ i ].ChanceToChoose, Candidates[ i ] ) );
+        }
+
+
+
+        CurrentBlueprint = values.ChooseByRandom( );
+
+
+
+
     }
 
 

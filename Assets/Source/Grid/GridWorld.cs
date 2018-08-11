@@ -41,12 +41,22 @@ namespace Source.Grid
             return BuiltObjects.Any( t => t.gridPos == pos );
         }
 
+        public bool ObjectInsideWorld( GridPos gpos )
+        {
+            var pos = gpos.pos;
+            return ( pos.x >= 0 && pos.x <= WorldSize.x-1 &&
+                pos.y >= 0 && pos.y <= WorldSize.y-1 &&
+                pos.z >= 0 && pos.z <= WorldSize.z-1 );
+
+        }
+
 
         public bool BuildObjectAtLocation( GridPos buildPos, BuildingBlueprintSingle building )
         {
             foreach ( var pos in building.Positions )
             {
-                if ( ObjectAtLocation( buildPos + pos ) )
+                var worldGrid = buildPos + pos;
+                if ( !ObjectInsideWorld( worldGrid ) || ObjectAtLocation( worldGrid ) )
                 {
                     return false;
                 }

@@ -14,6 +14,7 @@ namespace Source.Grid
         public List< GridPos > Positions;
         public GameObject BuildingPrefab;
         public int IncomeGenerated;
+        public float ChanceToChoose = 1f;
 
     }
 
