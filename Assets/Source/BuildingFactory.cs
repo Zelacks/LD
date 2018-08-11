@@ -42,7 +42,7 @@ namespace Source
                 gridobj.gridPos = buildLoc + blueprintLocs;
                 col.transform.SetParent( prefab.transform );
                 col.transform.position = gridobj.gridPos.pos;
-
+                world.AddObjectToBuilt( gridobj );
             }
         }
 

@@ -19,6 +19,10 @@ namespace Source.Grid
         [ Inject ]
         public BuildingFactory factory { get; set; }
 
+        public void AddObjectToBuilt( GridObject obj )
+        {
+            BuiltObjects.Add( obj );
+        }
 
 
         public Vector3Int WorldSize;
@@ -38,9 +42,9 @@ namespace Source.Grid
         }
 
 
-        public bool BuildObjectAtLocation( GridPos buildPos )
+        public bool BuildObjectAtLocation( GridPos buildPos, BuildingBlueprintSingle building )
         {
-            factory.Buildit( buildPos );
+            factory.CreateBuildingAtLocationSingle( buildPos, building );
             return true;
         }
 

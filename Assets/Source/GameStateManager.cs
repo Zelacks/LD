@@ -1,16 +1,55 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
+using ISSoW_Base_Game.Scripts.Helpers;
+
+using JetBrains.Annotations;
+
+using Source.Grid;
+
 using UnityEngine;
 
 
 public class GameStateManager : MonoBehaviour
 {
 
-    public int CurrentMoney = 0;
-    public int Income = 0;
-    public int Turns = 0;
+    public List< BuildingBlueprintSingle > Candidates = new List< BuildingBlueprintSingle >( );
 
-    
+    public ObservableValue< int > CurrentMoney = new ObservableValue< int >( 0 );
+    public ObservableValue< int > Income = new ObservableValue< int >( 0 );
+    public ObservableValue< int > TurnsTaken = new ObservableValue< int >( 0 );
+
+    public BuildingBlueprintSingle CurrentBlueprint;
+
+    /// <summary>
+    /// Called immediately after this <see cref="UnityEngine.Component"/> instance is created.
+    /// This is essentially a constructor for a <see cref="UnityEngine.Component"/>, you cannot define your own constructor.
+    /// </summary>
+    [ UsedImplicitly ]
+    private void Awake( )
+    {
+        Setup( );
+    }
+
+    void Setup( )
+    {
+        ChooseBlueprint( );
+    }
+
+    void ChooseBlueprint( )
+    {
+        CurrentBlueprint = Candidates[ Random.Range( 0, Candidates.Count ) ];
+    }
+
+
+    public void ProgressRound( BuildingBlueprintSingle builtBuilding )
+    {
+        Income.Value = Income.Value + builtBuilding.IncomeGenerated;
+        CurrentMoney.Value = CurrentMoney.Value + Income.Value;
+        TurnsTaken.Value = TurnsTaken.Value + 1;
+
+        ChooseBlueprint( );
+    }
+
 
 }

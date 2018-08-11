@@ -14,15 +14,11 @@ public class MoveToCursor : MonoBehaviour
     public Camera cam;
     [ Inject ]
     private GridWorld world;
-
-    private GridObject gridObj;
-
+    [ Inject ]
+    private GameStateManager state;
 
     // Use this for initialization
-    void Start( )
-    {
-        gridObj = GetComponentInChildren< GridObject >( );
-    }
+    void Start( ) { }
 
     // Update is called once per frame
     void Update( )
@@ -38,7 +34,13 @@ public class MoveToCursor : MonoBehaviour
 
             if ( result )
             {
-                world.BuildObjectAtLocation( world.ConvertWorldPosToGrid( hit.point ) );
+                var DidBuild = world.BuildObjectAtLocation( world.ConvertWorldPosToGrid( hit.point ), state.CurrentBlueprint );
+
+                if ( DidBuild )
+                {
+                    state.ProgressRound( state.CurrentBlueprint );
+                }
+
             }
         }
     }
