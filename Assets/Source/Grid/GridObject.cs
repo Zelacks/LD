@@ -27,7 +27,7 @@ namespace Source.Grid
 
         public bool IsAtPosition( GridPos other )
         {
-            return IsAtPosition( other.pos.x, other.pos.x, other.pos.z );
+            return IsAtPosition( other.pos.x, other.pos.y, other.pos.z );
         }
 
         /// <inheritdoc />

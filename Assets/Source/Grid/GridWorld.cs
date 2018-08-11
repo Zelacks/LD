@@ -44,6 +44,14 @@ namespace Source.Grid
 
         public bool BuildObjectAtLocation( GridPos buildPos, BuildingBlueprintSingle building )
         {
+            foreach ( var pos in building.Positions )
+            {
+                if ( ObjectAtLocation( buildPos + pos ) )
+                {
+                    return false;
+                }
+            }
+
             factory.CreateBuildingAtLocationSingle( buildPos, building );
             return true;
         }
